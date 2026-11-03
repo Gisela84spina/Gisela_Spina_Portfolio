@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import Slider from 'react-slick';
 import ProjectCard from './ProjectCard';
 import 'slick-carousel/slick/slick.css';
@@ -33,6 +33,17 @@ const ProjectsCarousel = ({ proyectos }) => {
       </Slider>
     </div>
   );
+};
+ProjectsCarousel.propTypes = {
+  proyectos: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      githubUrl: PropTypes.string.isRequired,
+      liveUrl: PropTypes.string,
+      imageUrl: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default ProjectsCarousel;

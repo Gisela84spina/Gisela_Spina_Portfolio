@@ -1,4 +1,4 @@
-import React from 'react';
+
 import ProjectsCarousel from './ProjectsCarousel';
 
 const ProjectsSection = () => {

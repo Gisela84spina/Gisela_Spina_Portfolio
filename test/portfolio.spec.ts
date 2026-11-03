@@ -15,13 +15,12 @@ test('navega a la sección de contacto desde el home', async ({ page }) => {
 
   await homePage.open();
 
-  // 1. Manejo del menú hamburguesa en mobile (si estamos en pantalla chica y el botón es visible)
-  const hamburgerButton = page.locator('button.hamburger, button[aria-label*="menu" i], .menu-toggle, button[class*="menu"]');
-  
-  if (await hamburgerButton.count() > 0 && await hamburgerButton.isVisible()) {
-    await hamburgerButton.click();
-    await page.waitForTimeout(400); // Espera a que se despliegue la animación del menú
-  }
+  // Manejo del menú hamburguesa en mobile
+const hamburgerButton = page.getByRole('button', { name: 'Toggle menu' });
+
+if (await hamburgerButton.isVisible()) {
+  await hamburgerButton.click();
+}
 
   // 2. Ejecutamos la navegación a contacto mediante el Page Object
   await homePage.goToContact();
@@ -47,11 +46,11 @@ test('permite descargar el CV correctamente', async ({ page }) => {
     await page.goto('/');
   
     // 1. Manejo del menú hamburguesa si estamos en pantalla chica
-    const hamburgerButton = page.locator('button.hamburger, button[aria-label*="menu" i], .menu-toggle, button[class*="menu"]');
-    if (await hamburgerButton.count() > 0 && await hamburgerButton.isVisible()) {
-      await hamburgerButton.click();
-      await page.waitForTimeout(400);
-    }
+    const hamburgerButton = page.getByRole('button', { name: 'Toggle menu' });
+
+if (await hamburgerButton.isVisible()) {
+  await hamburgerButton.click();
+}
   
     // 2. Localizamos el botón del CV usando los selectores nativos de Playwright (sin errores de sintaxis)
     const cvButton = page.getByRole('link', { name: /cv|curriculum|descargar/i }).first();
