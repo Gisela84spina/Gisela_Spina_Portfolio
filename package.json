@@ -1,5 +1,5 @@
 {
-  "name": "filotropo_dentronf",
+  "name": "gisela-spina-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,10 +7,10 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
+    "test": "playwright test",
     "preview": "vite preview"
   },
   "dependencies": {
-    "code": "^5.2.4",
     "framer-motion": "^12.9.1",
     "lucide-react": "^0.503.0",
     "prop-types": "^15.8.1",
