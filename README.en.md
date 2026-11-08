@@ -260,7 +260,6 @@ The following items represent known limitations and opportunities for further de
 
 ### Application
 
-- The submit button is not currently disabled while a request is being processed, so repeated clicks may trigger duplicate submissions.
 - The backend does not currently implement rate limiting or dedicated spam protection.
 - Resend uses its test sender address (`onboarding@resend.dev`) rather than a verified custom domain.
 - Server-side rejection messages are presented to the user through a generic error message.

@@ -46,7 +46,7 @@ function MeAndTech() {
       <div className="absolute inset-0 bg-black/20 backdrop-blur-md z-0" />
 
       {/* CONTENIDO: SOBRE MÍ */}
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10 pb-24">
+      <div id="about" className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10 pb-24">
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 md:w-2/3 shadow-lg">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6 relative inline-block after:content-[''] after:block after:h-1 after:bg-red-500 after:w-16 after:mt-2">
             Sobre mi

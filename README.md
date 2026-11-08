@@ -98,9 +98,7 @@ El proyecto móvil utiliza un viewport de dimensiones reducidas para validar el 
 
 ### Aislamiento y confiabilidad de las pruebas
 
-Las pruebas del formulario interceptan las solicitudes al backend mediante `page.route` de Playwright.
-
-Este enfoque permite obtener ejecuciones predecibles, evita el envío de correos reales y elimina la dependencia de la disponibilidad del backend externo.
+Las pruebas de envío del formulario (éxito y error) interceptan las solicitudes al backend mediante page.route de Playwright. Esto permite ejecuciones predecibles y elimina la dependencia de la disponibilidad del backend. Las pruebas de visibilidad y de validación no interceptan solicitudes.
 
 Playwright inicia automáticamente el servidor de desarrollo de Vite mediante la configuración `webServer`.
 
@@ -260,7 +258,6 @@ Los siguientes puntos representan limitaciones actuales y oportunidades de mejor
 
 ### Aplicación
 
-- El botón de envío no se deshabilita durante el procesamiento de una solicitud, por lo que varios clics pueden generar envíos duplicados.
 - El backend todavía no implementa rate limiting ni una protección específica contra spam.
 - Resend utiliza su dirección de prueba (`onboarding@resend.dev`) en lugar de un dominio propio verificado.
 - Los rechazos del servidor se muestran al usuario mediante un mensaje de error genérico.

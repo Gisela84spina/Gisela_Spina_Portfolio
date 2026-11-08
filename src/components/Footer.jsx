@@ -64,7 +64,7 @@ const Footer = () => {
             LinkedIn
           </a>
           <a
-            href="mailto:tuemail@example.com"
+            href="mailto:giselaspina84@outlook.com.ar"
             className="text-white hover:text-[#e11d48] hover:underline mx-3 transition duration-300"
           >
             Contacto
@@ -73,7 +73,7 @@ const Footer = () => {
 
         {/* Texto derechos reservados */}
         <p className="text-sm text-gray-300 mt-4">
-          © 2025 Gise Spina. Todos los derechos reservados.
+          © 2026 Gisela Spina. Todos los derechos reservados.
         </p>
       </div>
 

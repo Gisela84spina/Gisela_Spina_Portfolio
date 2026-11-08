@@ -5,7 +5,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="relative bg-black text-white shadow-md sticky top-0 z-50 overflow-hidden">
+    <nav id="home" className="relative bg-black text-white shadow-md sticky top-0 z-50 overflow-hidden">
       {/* Fondo de video */}
       <video
         autoPlay
@@ -27,7 +27,7 @@ export default function Header() {
         {/* Desktop menu */}
         <ul className="hidden md:flex space-x-6 items-center">
           <li><a href="#about" className="hover:text-red-500">Sobre mí</a></li>
-          <li><a href="#technologies" className="hover:text-red-500">Tecnologías</a></li>
+          <li><a href="#tech" className="hover:text-red-500">Tecnologías</a></li>
           <li><a href="#projects" className="hover:text-red-500">Proyectos</a></li>
           <li><a href="#contact" className="hover:text-red-500">Contacto</a></li>
           <li>
@@ -57,7 +57,7 @@ export default function Header() {
       {menuOpen && (
         <div className="md:hidden px-4 pb-4 space-y-2 text-white bg-black/60 backdrop-blur-sm">
           <a href="#about" className="block hover:text-red-400">Sobre mí</a>
-          <a href="#technologies" className="block hover:text-red-400">Tecnologías</a>
+          <a href="#tech" className="block hover:text-red-400">Tecnologías</a>
           <a href="#projects" className="block hover:text-red-400">Proyectos</a>
           <a href="#contact" className="block hover:text-red-400">Contacto</a>
           <a

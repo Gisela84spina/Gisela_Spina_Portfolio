@@ -26,8 +26,6 @@ export default function ContactForm() {
       return;
     }
   
-    console.log("Datos que se van a enviar:", JSON.stringify(formData, null, 2));
-  
     setStatus("sending");
   
    
@@ -43,8 +41,8 @@ export default function ContactForm() {
         if (!res.ok) throw new Error("Error en la respuesta del servidor");
         return res.json();
       })
-      .then((data) => {
-        console.log("✅ Respuesta del servidor:", data);
+      .then(() => {
+        
         setStatus("success");
         setFormData({ from_name: "", reply_to: "", message: "" });
       })
@@ -96,6 +94,7 @@ export default function ContactForm() {
         />
         <button
           type="submit"
+          disabled={status === "sending"}
           className="bg-[#0f766e] text-white font-semibold px-4 py-2 rounded hover:bg-[#0f172a] transition-colors"
         >
           Enviar
