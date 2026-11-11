@@ -1,25 +1,74 @@
-
-
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { SiTailwindcss, SiVite, SiSpringboot, SiMysql, SiPostman } from "react-icons/si";
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt, FaJava } from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiVite,
+  SiSpringboot,
+  SiMysql,
+  SiPostman,
+  SiTypescript,
+  SiSwagger,
+  SiGithubactions,
+  SiJira,
+  SiFirebase,
+  SiGithub,
+  SiEslint,
+} from "react-icons/si";
 
-const techs = [
-  { name: "HTML5", icon: <FaHtml5 className="text-orange-500" /> },
-  { name: "CSS3", icon: <FaCss3Alt className="text-blue-500" /> },
-  { name: "JavaScript", icon: <FaJs className="text-yellow-400" /> },
-  { name: "React", icon: <FaReact className="text-cyan-400" /> },
-  { name: "Tailwind", icon: <SiTailwindcss className="text-sky-400" /> },
-  { name: "Vite", icon: <SiVite className="text-purple-500" /> },
-  { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
-  { name: "Git", icon: <FaGitAlt className="text-red-500" /> },
-  { name: "Java", icon: <FaJava className="text-red-600" /> },
-  { name: "Spring Boot", icon: <SiSpringboot className="text-green-600" /> },
-  { name: "MySQL", icon: <SiMysql className="text-blue-400" /> },
-  { name: "Playwright", icon: <span className="text-5xl">🎭</span> },
-  { name: "Postman", icon: <SiPostman className="text-orange-500" /> },
-  { name: "Jira", icon: <span className="text-5xl">📋</span> },
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaJava,
+  FaTools,
+} from "react-icons/fa";
+
+
+const techGroups = [
+  {
+    title: "QA Automation & API Testing",
+    technologies: [
+      { name: "Playwright", icon: <span>🎭</span> },
+      { name: "TypeScript", icon: <SiTypescript className="text-blue-500" /> },
+      { name: "Postman", icon: <SiPostman className="text-orange-500" /> },
+      { name: "Swagger", icon: <SiSwagger className="text-green-500" /> },
+      { name: "Jira", icon: <SiJira className="text-blue-400" /> },
+    ],
+  },
+  {
+    title: "CI/CD & Herramientas",
+    technologies: [
+      { name: "GitHub Actions", icon: <SiGithubactions className="text-white" /> },
+      { name: "Git", icon: <FaGitAlt className="text-red-500" /> },
+      { name: "GitHub", icon: <SiGithub className="text-white" /> },
+      { name: "ESLint", icon: <SiEslint className="text-purple-400" /> },
+      { name: "MySQL Workbench", icon: <FaTools className="text-blue-300" /> },
+    ],
+  },
+  {
+    title: "Frontend Development",
+    technologies: [
+      { name: "HTML5", icon: <FaHtml5 className="text-orange-500" /> },
+      { name: "CSS3", icon: <FaCss3Alt className="text-blue-500" /> },
+      { name: "JavaScript", icon: <FaJs className="text-yellow-400" /> },
+      { name: "React", icon: <FaReact className="text-cyan-400" /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss className="text-sky-400" /> },
+      { name: "Vite", icon: <SiVite className="text-purple-500" /> },
+    ],
+  },
+  {
+    title: "Backend & Bases de datos",
+    technologies: [
+      { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
+      { name: "Java", icon: <FaJava className="text-red-600" /> },
+      { name: "Spring Boot", icon: <SiSpringboot className="text-green-600" /> },
+      { name: "MySQL", icon: <SiMysql className="text-blue-400" /> },
+      { name: "Firebase", icon: <SiFirebase className="text-yellow-400" /> },
+    ],
+  },
 ];
 
 function MeAndTech() {
@@ -56,20 +105,21 @@ function MeAndTech() {
             
             <br /><br />
         
-            De la gestión comercial a la calidad de software.
+            Mi trayectoria combina experiencia en gestión comercial y operativa
+  con formación y desarrollo de proyectos en el sector IT.
+
 
            <br /><br />
 
-          
-           De padres comerciantes, mi experiencia laboral se inicia a una
-            edad muy temprana gestionando diferentes
-            rubros de comercios, lo que me generó una capacidad natural
-            para entender las necesidades reales del usuario, detectar
-            fallas en los procesos y trabajar con autonomía bajo objetivos claros.
-            <br />Desde 2022 comienza mi formación continua en el sector IT,
-             combinando el desarrollo web (React, Node.js, Java, Spring Boot)
-              con el Testing y la Automatización de
-               Calidad (QA).
+           Trabajo en automatización de pruebas E2E con Playwright y TypeScript,
+  testing de APIs con Postman y desarrollo de aplicaciones web y APIs REST
+  utilizando React, Node.js, Java y Spring Boot.
+
+            <br /> Integro prácticas de calidad desde el desarrollo:
+             diseño de escenarios de prueba, validación de funcionalidades
+              y análisis de resultados. En mi portfolio implementé un
+               pipeline CI/CD con GitHub Actions para ejecutar controles 
+               de calidad y pruebas automatizadas.
             </p>
 
           <motion.blockquote
@@ -80,11 +130,10 @@ function MeAndTech() {
             className="relative text-red-500 italic mt-8 text-lg"
           >
             <span className="absolute text-5xl text-white/10 -left-6 -top-4 select-none">“</span>
-            Mi objetivo es aportar un perfil integral: no solo diseño
-             e implemento pruebas automatizadas (Playwright, Postman,
-              SQL, Swagger), sino que entiendo el código fuente por 
-              dentro, lo que me permite colaborar a la par de los equipos
-               de desarrollo para entregar un software robusto y libre de fallas.
+            Entiendo la calidad de software como un proceso que combina
+  criterio técnico, automatización y conocimiento del desarrollo.
+  Mi objetivo es construir soluciones confiables y aportar valor
+  a lo largo del ciclo de vida del software.
             <span className="absolute text-5xl text-white/10 -right-6 -bottom-4 select-none">”</span>
           </motion.blockquote>
         </div>
@@ -110,24 +159,49 @@ function MeAndTech() {
       </div>
 
       {/* CONTENIDO: TECNOLOGÍAS */}
-      <div id="tech" className="relative z-10 max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-12">Tecnologías</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 px-6">
-          {techs.map((tech, index) => (
+     
+<div id="tech" className="relative z-10 max-w-6xl mx-auto">
+  <h2 className="text-4xl font-bold mb-12 text-center">
+    Tecnologías y herramientas
+  </h2>
+
+  <div className="space-y-12">
+    {techGroups.map((group, groupIndex) => (
+      <div key={group.title}>
+        <h3 className="text-xl sm:text-2xl font-semibold mb-6 text-red-400 text-center">
+          {group.title}
+        </h3>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 px-2">
+          {group.technologies.map((tech, index) => (
             <motion.div
               key={tech.name}
-              className="flex flex-col items-center gap-3 bg-white/10 p-6 rounded-xl shadow hover:scale-105 transition transform backdrop-blur"
-              initial={{ opacity: 0, y: 40 }}
+              className="flex flex-col items-center justify-center gap-3
+                bg-white/10 p-6 rounded-xl shadow
+                hover:scale-105 hover:bg-white/15
+                transition transform backdrop-blur"
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.07,
+              }}
               viewport={{ once: true }}
             >
-              <div className="text-5xl">{tech.icon}</div>
-              <p className="text-sm">{tech.name}</p>
+              <div className="text-5xl">
+                {tech.icon}
+              </div>
+
+              <p className="text-sm text-center font-medium">
+                {tech.name}
+              </p>
             </motion.div>
           ))}
         </div>
       </div>
+    ))}
+  </div>
+</div>
     </section>
   );
 }
